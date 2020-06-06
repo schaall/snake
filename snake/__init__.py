@@ -1,1 +1,1 @@
-from games.snake_game import Snake
+from snake.snake_game import Snake
