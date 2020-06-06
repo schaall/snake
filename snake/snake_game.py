@@ -66,6 +66,7 @@ class Snake:
 		
 		# Renders grid if enabled
 		if self.show_grid:
+			line_width = round(100/self.size)
 			for type in range(2):
 				for line in range(1, self.size):
 					# Vertical lines
@@ -75,7 +76,7 @@ class Snake:
 					else:
 						start = [0, line*self.snake_size]
 						end = [self.display_width, start[1]]
-					pygame.draw.line(self.screen, self.gray, start, end, 3)
+					pygame.draw.line(self.screen, self.gray, start, end, line_width)
 
 		# Shows score at top of the screen
 		text_size = 50
