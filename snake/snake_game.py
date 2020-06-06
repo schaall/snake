@@ -65,8 +65,8 @@ class Snake:
 		pygame.draw.rect(self.screen, self.red, [self.apple_pos, self.snake_size2D])
 		
 		# Renders grid if enabled
-		if self.show_grid:
-			line_width = round(100/self.size)
+		line_width = round(100/self.size)
+		if self.show_grid and line_width > 0:
 			for type in range(2):
 				for line in range(1, self.size):
 					# Vertical lines
