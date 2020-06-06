@@ -29,5 +29,5 @@ action = snake_game.user_action()
 # Installation
 Just run the following code in your terminal or command line to install the package:
 ```
-pip install git+
+pip install git+https://github.com/mfiless/Snake-ML-Env/blob/master/snake.py
 ```
