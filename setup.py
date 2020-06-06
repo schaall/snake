@@ -5,7 +5,7 @@ setup(
   description="A toolkit for training reinforcement learning agents on the game snake.", 
   url='https://github.com/mfiless/snake',
   author='Leon Shams',
-  license='MIT'
+  license='MIT',
   dependency_links=['https://github.com/pygame/pygame.git'], 
   zip_safe=False, 
   python_requires='>=3.6'
