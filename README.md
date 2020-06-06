@@ -2,7 +2,7 @@
 This is an environment designed to be used for training machine learning agents on the game snake. 
 
 <video width="200" height="200" controls>
-  <source src="snake_game.mov" type="video/mp4">
+  <source src="/Users/leonshams/Downloads/snake_clip.mov" type="video/mp4">
 </video>
 
 <br>
