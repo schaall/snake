@@ -1,3 +1,11 @@
 from setuptools import setup
 
-setup(name="pygame", dependency_links=['https://github.com/pygame/pygame.git'])
+setup(
+  name="snake", 
+  description="A toolkit for training reinforcement learning agents on the game snake.", 
+  url='https://github.com/mfiless/Snake-ML-Env',
+  author='Leon Shams',
+  dependency_links=['https://github.com/pygame/pygame.git'], 
+  zip_safe=False, 
+  python_requires='>=3.6'
+)
