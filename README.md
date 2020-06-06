@@ -4,7 +4,7 @@ This is an environment designed to be used for training machine learning agents 
 <br>
 
 # How to use
-When the environment is initialized the screen size (what you see) must be specified as well as the board size (obs space). If you would like to see how well the agent performs you can set a frame rate cap. 
+When the environment is initialized the screen size (what you see) must be specified as well as the board size (obs space). If you would like to see how well the agent performs you can set a frame rate cap so you can actually view what is happening at a reasonable speed. 
 ```
 snake_game = Snake(screen_size=800, board_size=20, max_fps=None) # Initialization
 snake_game.max_fps = 12 # Modifies the frame rate
@@ -16,6 +16,8 @@ Collecting data from the environment works in a similar way to OpenAI's gym. The
 action_space = snake_game.action_space
 state = snake_game.reset() # Resets the environment and gets the starting state
 state, reward, done = snake_game.step(action) # Makes step and returns the next state as well as the reward and whether or not the snake has died
+
+snake_game.render()
 ```
 <br>
 
