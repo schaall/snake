@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
   name="snake", 
   description="A toolkit for training reinforcement learning agents on the game snake.", 
-  url='https://github.com/mfiless/snake',
+  url='https://github.com/mfiless/snake/blob/master/games/snake_game.py',
   author='Leon Shams',
   license='MIT',
   dependency_links=['https://github.com/pygame/pygame.git'], 
