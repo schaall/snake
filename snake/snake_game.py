@@ -142,9 +142,11 @@ class Snake:
 			pos = [(i%self.size)*self.snake_size, (i//self.size)*self.snake_size]
 
 			if pos == self.head_pos:
-				pixel_array[i%self.size].append(2)
+				pixel_array[i%self.size].append(3)
 
 			elif pos in self.past_positions:
+				pixel_array[i%self.size].append(2)
+			elif pos == self.apple_pos:
 				pixel_array[i%self.size].append(1)
 			else:
 				pixel_array[i%self.size].append(0)
