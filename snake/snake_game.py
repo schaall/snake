@@ -36,7 +36,7 @@ class Snake:
 
 
 	def reset(self):
-		self.head_pos = [self.snake_size*self.size//4, self.snake_size*self.size//2]
+		self.head_pos = [int(self.snake_size*self.size/4), int(self.snake_size*self.size/2)]
 		self.length = copy.copy(self.starting_length)
 		self.past_positions = deque([copy.copy(self.head_pos)], maxlen=self.length)
 
