@@ -1,5 +1,6 @@
 from snake import Snake
 
+
 # Initializes environment with a 800x800 window on a 20x20 game of snake running at 12fps so that it is playable
 snake_game = Snake(screen_size=800, board_size=20, max_fps=12, show_grid=True)
 
