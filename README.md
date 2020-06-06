@@ -14,7 +14,7 @@ pip install --upgrade git+https://github.com/mfiless/snake.git
 <br>
 
 # How to use
-When the environment is initialized the screen size (what you see) must be specified as well as the board size (obs space). If you would like to see how well the agent performs you can set a frame rate cap so you can actually view what is happening at a reasonable speed. And you have the choice of showing a grid which spaces out the rectanges in the snake and makes it look nicer but hurts performance. 
+When the environment is initialized the screen size (what you see) must be specified as well as the board size (obs space). If you would like to see how well the agent performs you can set a frame rate cap so you can actually view what is happening at a reasonable speed. And you have the choice of showing a grid which spaces out the rectanges in the snake and makes it look nicer (same as in video above) but hurts performance. 
 ```
 snake_game = Snake(screen_size=800, board_size=20, max_fps=None, show_grid=True) # Initialization
 snake_game.max_fps = 12 # Modifies the frame rate
