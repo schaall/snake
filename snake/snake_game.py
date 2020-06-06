@@ -130,20 +130,17 @@ class Snake:
 
 		self.game_rules()
 
-		pixel_array = self.create_pix_arr()
-
 		# Returns the pixel_array, reward, and terminal state
-		return pixel_array, self.get_rew(pixel_array), self.gameover
+		return self.create_pix_arr(), self.get_rew(), self.gameover
 	
 	
-	def get_rew(self, pixel_array):
-		if self.gameover:
+	def get_rew(self):
+		if self.num_available_pos <= 0: # If board is full
+			rew = 10
+		elif self.gameover:
 			rew = -10
 		elif self.eaten:
 			rew = 1
-		elif not any(0 in col for col in pixel_array):
-			rew = 10
-			self.gameover = True
 		else:
 			rew = self.length/(self.size**2)
 			
@@ -206,10 +203,15 @@ class Snake:
 			pos = [(i%self.size)*self.snake_size, (i//self.size)*self.snake_size]
 			if not pos in self.past_positions:
 				available_pos.append(pos)
+				
+		self.num_available_pos = len(available_pos)
+		
+		if self.num_available_pos > 0:
+			self.apple_pos = random.choice(available_pos)
+		else:
+			self.gameover = True
 
-		self.apple_pos = random.choice(available_pos)
-
-
+			
 	def finish(self):
 		pygame.quit()
 
