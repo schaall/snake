@@ -1,5 +1,6 @@
 # Info
 This is an environment designed to be used for training machine learning agents on the game snake. 
+
 ![snake](https://media.giphy.com/media/S9ngZazht2WX9VkfMH/giphy.gif)
 
 <br>
