@@ -63,13 +63,6 @@ class Snake:
 
 		# render apple
 		pygame.draw.rect(self.screen, self.red, [self.apple_pos, self.snake_size2D])
-
-		# Shows score at top of the screen
-		text_size = 50
-		text_pos = (self.display_width//2 - text_size//2, 15)
-		font = pygame.font.SysFont('Comic Sans MS', text_size)
-		text_surface = font.render(str(self.length-self.starting_length), True, self.white)
-		self.screen.blit(text_surface, dest=text_pos)
 		
 		# Renders grid if enabled
 		if self.show_grid:
@@ -83,6 +76,13 @@ class Snake:
 						start = [0, line*self.snake_size]
 						end = [self.display_width, start[1]]
 					pygame.draw.line(self.screen, self.gray, start, end, 3)
+
+		# Shows score at top of the screen
+		text_size = 50
+		text_pos = (self.display_width//2 - text_size//2, 15)
+		font = pygame.font.SysFont('Comic Sans MS', text_size)
+		text_surface = font.render(str(self.length-self.starting_length), True, self.white)
+		self.screen.blit(text_surface, dest=text_pos)
 
 		# Updates the display
 		pygame.display.update()
