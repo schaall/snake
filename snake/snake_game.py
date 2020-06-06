@@ -73,7 +73,7 @@ class Snake:
 		
 		# Renders grid if enabled
 		if self.show_grid:
-			for type in range(2)
+			for type in range(2):
 				for line in range(1, self.size):
 					# Vertical lines
 					if type == 0:
