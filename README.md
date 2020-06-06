@@ -11,7 +11,7 @@ snake_game.max_fps = 12 # Modifies the frame rate
 ```
 <br>
 
-Collecting data from the environment works in a similar way to OpenAI's gym. The state data is scaled and normalized so that no modifications are needed to feed it into the agent
+Collecting data from the environment works in a similar way to OpenAI's gym. Note that the state data is scaled and normalized so that no modifications are needed to feed it into the agent
 ```
 action_space = snake_game.action_space
 state = snake_game.reset() # Resets the environment and gets the starting state
