@@ -141,7 +141,7 @@ class Snake:
 			rew = -10
 		elif self.eaten:
 			rew = 1
-		if not any(0 in col for col in pixel_array):
+		elif not any(0 in col for col in pixel_array):
 			rew = 10
 			self.gameover = True
 		else:
