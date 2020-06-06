@@ -1,5 +1,5 @@
 # Info
-This is an environment designed to be used for training machine learning agents on snake. 
+This is an environment designed to be used for training machine learning agents on the game snake. 
 
 <br>
 
