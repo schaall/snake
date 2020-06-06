@@ -141,8 +141,11 @@ class Snake:
 			rew = -10
 		elif self.eaten:
 			rew = 1
+		if not any(0 in col for col in pixel_array):
+			rew = 10
+			self.gameover = True
 		else:
-			rew = self.length/(size**2)
+			rew = self.length/(self.size**2)
 			
 		return rew
 
