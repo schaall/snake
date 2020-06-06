@@ -6,7 +6,7 @@ This is an environment designed to be used for training machine learning agents 
 <br>
 
 # Installation
-Just run the following code in your terminal or command line to install the package:
+Just run the following code in your terminal or command line to install the toolkit:
 ```
 pip install git+https://github.com/mfiless/snake.git
 ```
