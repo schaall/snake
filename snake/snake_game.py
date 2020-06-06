@@ -8,6 +8,8 @@ import random
 class Snake:
 	def __init__(self, screen_size, board_size, max_fps=None):
 		pygame.init()
+		
+		screen_size = int(screen_size/board_size)*board_size
 
 		self.display_width = screen_size
 		self.display_height = screen_size
