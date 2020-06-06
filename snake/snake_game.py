@@ -130,9 +130,21 @@ class Snake:
 
 		self.game_rules()
 
+		pixel_array = self.create_pix_arr()
 
 		# Returns the pixel_array, reward, and terminal state
-		return self.create_pix_arr(), self.length, self.gameover
+		return pixel_array, self.get_rew(pixel_array), self.gameover
+	
+	
+	def get_rew(self, pixel_array):
+		if self.gameover:
+			rew = -10
+		elif self.eaten:
+			rew = 1
+		else:
+			rew = self.length/(size**2)
+			
+		return rew
 
 
 	# Creates a representation of the screen that has been shrunk down and normalized
@@ -161,16 +173,16 @@ class Snake:
 
 		# Calculates if apple is eaten
 		if self.head_pos == self.apple_pos:
-			eaten = True
+			self.eaten = True
 		else:
-			eaten = False
+			self.eaten = False
 
 		# Ends game if snake has collided with its tail
 		if self.head_pos in self.past_positions:
 			self.gameover = True
 
 		# Adds 1 to length of snake tail if apple is eaten
-		if eaten:
+		if self.eaten:
 			self.length += 1
 			self.past_positions = deque(copy.copy(self.past_positions), maxlen=self.length)
 
@@ -178,7 +190,7 @@ class Snake:
 		self.past_positions.append(copy.copy(self.head_pos))
 
 		# Respawns the apple if it has been eaten
-		if eaten:
+		if self.eaten:
 			self.spawn_apple()
 
 		if self.max_fps is not None:
