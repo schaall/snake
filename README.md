@@ -5,6 +5,14 @@ This is an environment designed to be used for training machine learning agents 
 
 <br>
 
+# Installation
+Just run the following code in your terminal or command line to install the package:
+```
+pip install git+https://github.com/mfiless/snake.git
+```
+
+<br>
+
 # How to use
 When the environment is initialized the screen size (what you see) must be specified as well as the board size (obs space). If you would like to see how well the agent performs you can set a frame rate cap so you can actually view what is happening at a reasonable speed. 
 ```
@@ -26,12 +34,4 @@ snake_game.render()
 You can also play the game yourself by feeding in your action to the step function instead of an agent's
 ```
 action = snake_game.user_action()
-```
-
-<br>
-
-# Installation
-Just run the following code in your terminal or command line to install the package:
-```
-pip install git+https://github.com/mfiless/snake.git
 ```
