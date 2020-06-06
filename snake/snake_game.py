@@ -82,7 +82,7 @@ class Snake:
 					else:
 						start = [0, line*self.snake_size]
 						end = [self.display_width, start[1]]
-					pygame.draw.line(screen, self.gray, start, end, 3)
+					pygame.draw.line(self.screen, self.gray, start, end, 3)
 
 		# Updates the display
 		pygame.display.update()
