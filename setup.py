@@ -8,7 +8,7 @@ setup(
   author='Leon Shams',
   license='MIT',
   packages=['snake'],
-  install_requires=["pygame>=1.9.2"],
+  install_requires=["pygame"],
   zip_safe=False, 
   python_requires='>=3.6'
 )
