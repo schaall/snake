@@ -6,7 +6,7 @@ import random
 
 
 class Snake:
-	def __init__(self, screen_size, board_size, max_fps=None):
+	def __init__(self, screen_size, board_size, max_fps=None, show_grid=False):
 		pygame.init()
 		
 		screen_size = round(screen_size/board_size)*board_size
@@ -20,6 +20,8 @@ class Snake:
 		self.snake_size =  screen_size/board_size
 		self.snake_size2D = [self.snake_size] * 2
 		self.starting_length = 3
+		
+		self.show_grid = show_grid
 
 		self.action_space = 4
 
@@ -65,10 +67,22 @@ class Snake:
 		# Shows score at top of the screen
 		text_size = 50
 		text_pos = (self.display_width//2 - text_size//2, 15)
-
 		font = pygame.font.SysFont('Comic Sans MS', text_size)
 		text_surface = font.render(str(self.length-self.starting_length), True, self.white)
 		self.screen.blit(text_surface, dest=text_pos)
+		
+		# Renders grid if enabled
+		if self.show_grid:
+			for type in range(2)
+				for line in range(1, self.size):
+					# Vertical lines
+					if type == 0:
+						start = [line*self.snake_size, 0]
+						end = [start[0], self.display_height]
+					else:
+						start = [0, line*self.snake_size]
+						end = [self.display_width, start[1]]
+					pygame.draw.line(screen, self.gray, start, end, 3)
 
 		# Updates the display
 		pygame.display.update()
