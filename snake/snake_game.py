@@ -3,6 +3,7 @@ from collections import deque
 from sys import exit
 import copy
 import random
+import time
 
 
 class Snake:
@@ -37,7 +38,7 @@ class Snake:
 
 		self.clock = pygame.time.Clock()
 		self.max_fps = max_fps
-
+		
 
 	def reset(self):
 		self.head_pos = [self.snake_size*int(self.size/4), self.snake_size*int(self.size/2)]
@@ -48,6 +49,8 @@ class Snake:
 		self.move_dir = self.right
 
 		self.spawn_apple()
+		
+		self.user_input = False
 
 		return self.create_pix_arr()
 
@@ -91,25 +94,29 @@ class Snake:
 
 	# Gets user key presses
 	def user_action(self):
+		start_time = time.time()
 		action = self.move_dir
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				exit()
-
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_q:
-					exit()
-				elif event.key == pygame.K_ESCAPE:
+		self.user_input = True
+		
+		while time.time()-start_time() < 1/self.max_fps:
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT:
 					exit()
 
-				if event.key == pygame.K_UP:
-					action = self.up
-				elif event.key == pygame.K_DOWN:
-					action = self.down
-				elif event.key == pygame.K_LEFT:
-					action = self.left
-				elif event.key == pygame.K_RIGHT:
-					action = self.right
+				if event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_q:
+						exit()
+					elif event.key == pygame.K_ESCAPE:
+						exit()
+
+					if event.key == pygame.K_UP:
+						action = self.up
+					elif event.key == pygame.K_DOWN:
+						action = self.down
+					elif event.key == pygame.K_LEFT:
+						action = self.left
+					elif event.key == pygame.K_RIGHT:
+						action = self.right
 
 		return action
 
@@ -195,7 +202,10 @@ class Snake:
 			self.spawn_apple()
 
 		if self.max_fps is not None:
-			self.clock.tick(self.max_fps)
+			if not self.user_input:
+				self.clock.tick(self.max_fps)
+			else:
+				self.user_input = False
 
 
 	def spawn_apple(self):
