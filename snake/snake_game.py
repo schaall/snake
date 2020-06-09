@@ -191,7 +191,7 @@ class Snake:
 			self.past_positions = deque(copy.copy(self.past_positions), maxlen=self.length)
 			
 		# Ends game if snake has collided with its tail
-		if self.head_pos in self.past_positions[:-1]:
+		if self.head_pos in list(self.past_positions)[:-1]:
 			self.gameover = True
 
 		# Adds head position to tail
