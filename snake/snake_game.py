@@ -98,7 +98,7 @@ class Snake:
 		action = self.move_dir
 		self.user_input = True
 		
-		while time.time()-start_time() < 1/self.max_fps:
+		while time.time()-start_time < 1/self.max_fps:
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					exit()
