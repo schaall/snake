@@ -143,14 +143,14 @@ class Snake:
 	
 	
 	def get_rew(self):
-		if self.num_available_pos <= 0: # If board is full
+		if self.num_available_pos <= 0: # If board is full (win)
 			rew = 10
-		elif self.gameover:
-			rew = -10
-		elif self.eaten:
-			rew = 1
+		elif self.gameover: # Snake is dead
+			rew = -1
+		elif self.eaten: # Apple is eaten
+			rew = self.length/(self.size**2) # value of apple increases and snake length gets longer
 		else:
-			rew = self.length/(self.size**2)
+			rew = 0
 			
 		return rew
 
