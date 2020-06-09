@@ -185,14 +185,14 @@ class Snake:
 		else:
 			self.eaten = False
 
-		# Ends game if snake has collided with its tail
-		if self.head_pos in self.past_positions:
-			self.gameover = True
-
 		# Adds 1 to length of snake tail if apple is eaten
 		if self.eaten:
 			self.length += 1
 			self.past_positions = deque(copy.copy(self.past_positions), maxlen=self.length)
+			
+		# Ends game if snake has collided with its tail
+		if self.head_pos in self.past_positions[:-1]:
+			self.gameover = True
 
 		# Adds head position to tail
 		self.past_positions.append(copy.copy(self.head_pos))
