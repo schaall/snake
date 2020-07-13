@@ -20,7 +20,7 @@ for game in range(num_games):
 		action = snake_game.user_action()
 
 		# Plays your action or continues moving straight if no action or an illegal action was made
-		state, reward, done = snake_game.step(action)
+		state, reward, done, info = snake_game.step(action)
 		
 		# Renders new state
 		snake_game.render()
