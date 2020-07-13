@@ -139,7 +139,7 @@ class Snake:
 		self.game_rules()
 
 		# Returns the pixel_array, reward, and terminal state
-		return self.create_pix_arr(), self.get_rew(), self.gameover
+		return self.create_pix_arr(), self.get_rew(), self.gameover, {"Head Position": self.head_pos, "Current Size": self.length-self.starting_length}
 	
 	
 	def get_rew(self):
