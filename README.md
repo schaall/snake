@@ -8,7 +8,7 @@ This is an environment designed to be used for training reinforcement learning a
 # Installation
 Just run the following code in your terminal or command line to install the toolkit:
 ```
-pip install --upgrade git+https://github.com/schaall/snake.git
+pip install --upgrade git+https://github.com/LeonShams/snake.git
 ```
 
 <br>
